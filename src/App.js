@@ -12,25 +12,29 @@ class App extends Component{
     error:"", // Error state
   };
 
+  //Fetch the list of users
   componentDidMount(){
     this.fetchUsers();
   }
 
+  //Fetch user data from the API and update the state
   fetchUsers = async () =>{
     try{
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-      this.setState({users:response.data});
+      this.setState({users:response.data}); //stores the fetched users in the state
     }catch(error){
-      this.setState({error:"Failed to fetch users."});
+      this.setState({error:"Failed to fetch users."}); // set an error message
     }
   };
 
+  //Handle adding a new user
   handleAddUser = (user) =>{
     this.setState((prevState)=>({
       users:[...prevState.users,user],
     }))
   };
 
+  //Handle editing an existing user
   handleEditUser = (updateUser) =>{
     this.setState((prevState)=>({
       users:prevState.users.map((user)=>
@@ -39,6 +43,7 @@ class App extends Component{
     }));
   };
 
+  // Handle deleting a user 
   handleDeleteUSer = (id) =>{
     this.setState((prevState)=>({
       users:prevState.users.filter((user) => user.id !== id)
