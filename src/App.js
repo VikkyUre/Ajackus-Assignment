@@ -3,12 +3,13 @@ import axios from 'axios'
 import UserList from './components/UserList'
 import UserForm from './components/UserForm'
 import ErrorBoundary from './components/ErrorBoundary'
+import './App.css'
 
 class App extends Component{
   state = {
-    users:[],
-    selectedUser:null,
-    error:"",
+    users:[], //List Of users
+    selectedUser:null,  //User selected for editing
+    error:"", // Error state
   };
 
   componentDidMount(){
