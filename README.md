@@ -19,12 +19,6 @@ Error Handling: Displays friendly error messages when API calls fail.
 
 Responsive UI: Fully responsive design using CSS.
 
-Bonus Features:
-
-Pagination or Infinite Scrolling (can be extended).
-
-Client-side form validation for fields like email.
-
 ---
 
 Installation
